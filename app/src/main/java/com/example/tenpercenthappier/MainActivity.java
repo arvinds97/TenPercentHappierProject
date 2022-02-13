@@ -88,7 +88,9 @@ public class MainActivity extends AppCompatActivity implements TopicListener {
                     item.get(Constants.TITLE).toString(),
                     (Integer) item.get(Constants.POSITION),
                     (Boolean) item.get(Constants.FEATURED));
-            topicList.add(topic);
+            if (topic.isFeatured()) {
+                topicList.add(topic);
+            }
         }
         return topicList;
     }
