@@ -74,6 +74,11 @@ public class TopicImpl implements Topic {
     }
 
     @Override
+    public boolean isFeatured() {
+        return featured;
+    }
+
+    @Override
     public String toString() {
         return "Topic{" +
                 "uuid='" + uuid + '\'' +

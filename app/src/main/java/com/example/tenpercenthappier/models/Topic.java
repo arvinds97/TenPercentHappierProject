@@ -47,5 +47,11 @@ public interface Topic {
      */
     String getUuid();
 
+    /**
+     * Method that confirms if the topic is featured or not.
+     *
+     * @return true or false
+     */
+    boolean isFeatured();
 
 }
