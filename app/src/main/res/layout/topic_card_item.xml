@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="end"
+    android:layout_margin="5dp"
+    android:background="@color/design_default_color_secondary"
+    app:cardCornerRadius="5dp"
+
+    app:cardElevation="5dp">
+
+    <RelativeLayout
+        android:id="@+id/colorCode"
+        android:layout_width="10dp"
+        android:layout_height="75dp"
+        android:layout_gravity="start"
+        android:background="@color/black">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="393dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/text_style"
+        android:paddingStart="@dimen/spaceForColor"
+        android:paddingLeft="@dimen/spaceForColor">
+
+        <TextView
+            android:id="@+id/item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="7dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="left"
+            android:text="@string/item_title"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/item_meditation_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_title"
+            android:layout_marginStart="@dimen/marginStartCount"
+            android:layout_marginTop="@dimen/marginTopCount"
+            android:gravity="start"
+            android:text="@string/item_count"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/textSizeLabel"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/count_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_title"
+            android:layout_marginStart="@dimen/marginStartCountLabel"
+            android:layout_marginTop="@dimen/marginTopCountLabel"
+            android:layout_toEndOf="@+id/item_meditation_count"
+            android:gravity="end"
+            android:text="@string/label_meditations"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="@dimen/textSizeLabel"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

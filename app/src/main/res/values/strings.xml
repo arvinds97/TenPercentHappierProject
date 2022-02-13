@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TenPercentHappier</string>
+    <string name="item_title">Title</string>
+    <string name="item_count">count</string>
+    <string name="label_meditations">Meditations</string>
+    <string name="topics_title">Topics</string>
+</resources>
