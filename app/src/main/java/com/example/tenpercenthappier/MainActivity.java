@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -102,7 +102,9 @@ public class MainActivity extends AppCompatActivity implements TopicListener {
     public void onTopicClick(View v, int position) {
         String description = topicList.get(position).getDescriptionShort().equals("null") ?
                 "No Description" : topicList.get(position).getDescriptionShort();
-        Toast.makeText(MainActivity.this, description, Toast.LENGTH_SHORT)
-                .show();
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setMessage(description).setTitle("A Short Description");
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
