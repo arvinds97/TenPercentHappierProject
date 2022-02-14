@@ -1,9 +1,16 @@
 package com.example.tenpercenthappier;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -38,12 +45,19 @@ public class MainActivity extends AppCompatActivity implements TopicListener {
     private List<TopicImpl> topicList;
     private TopicRecyclerAdapter recyclerViewAdapter;
     RequestQueue queue;
+    ActionBar actionBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.recycler_view);
+        actionBar = getSupportActionBar();
+        ColorDrawable colorDrawable
+                = new ColorDrawable(Color.parseColor("#D3D3D3"));
+        actionBar.setBackgroundDrawable(colorDrawable);
+        setActionbarTextColor(actionBar,Color.parseColor("#000000"));
         topicList = new ArrayList<>();
         getTopicsAndPopulateRecyclerView();
     }
@@ -106,5 +120,12 @@ public class MainActivity extends AppCompatActivity implements TopicListener {
         builder.setMessage(description).setTitle("A Short Description");
         AlertDialog dialog = builder.create();
         dialog.show();
+    }
+
+    private void setActionbarTextColor(ActionBar actBar, int color) {
+        String title = actBar.getTitle().toString();
+        Spannable spannablerTitle = new SpannableString(title);
+        spannablerTitle.setSpan(new ForegroundColorSpan(color), 0, spannablerTitle.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        actBar.setTitle(spannablerTitle);
     }
 }
