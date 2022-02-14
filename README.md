@@ -13,7 +13,7 @@ Some Assumptions made during development :
 
 Some Limitations:
 * The colors with the same HEX code look different in Android and in iOS.
-* The fonts have differences and are not exactly the same.
+* The fonts have slight differences and are not exactly the same.
 * Some colors where not parseable by the Colors class of android, due to which for those particular topics, I have set a default color of blue.
 
 Some common coding practices followed :
